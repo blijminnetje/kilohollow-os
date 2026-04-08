@@ -1,43 +1,106 @@
-# kilohollow-os
-Frontend UI prototype for a Contractor Foreman-style workflow system integrated with HubSpot.
-# Kilo Hollow OS
+# Kilo Hollow Energy — Operations System
 
-A contractor operations platform designed to replicate and improve Contractor Foreman-style workflows, integrated with HubSpot CRM.
+A full-stack contractor operations platform built for Kilo Hollow Energy, a Virginia-based residential and commercial solar, battery, and generator company. This system replicates and improves upon Contractor Foreman workflows, integrated with HubSpot CRM data.
 
-This project is being developed as part of a database systems course, focusing on UI design, data modeling, and workflow integration.
+Built as part of a Database Systems course (CMSC608) at Virginia Commonwealth University.
 
 ---
 
-## 🚀 Features
-- 📊 Dashboard for lead and project tracking
-- 👥 Lead management (HubSpot-style pipeline)
-- 🏗️ Project lifecycle management (Lead → Estimate → Contract → Project)
-- 📋 Task and job tracking
-- 💰 Estimates, contracts, and invoicing modules
-- 🔄 Simulated HubSpot integration
+## Features
+
+- **Leads** — HubSpot-style kanban board with 8 pipeline stages, drag & drop, deal type badges, column totals
+- **Estimates** — Full estimate editor with line items, price book (real Greentech Renewables pricing), status pipeline, linked to leads
+- **Projects** — Auto-created when a lead closes, with Summary, Financial, Documents, and Files tabs
+- **Invoices** — Full invoice management with line items, payment posting, balance tracking
+- **Payments** — Payment log with Received / Verified / In Review pipeline, linked to invoices
+- **Dashboard** — Live stats pulling from all modules — Closed Won/Lost, active projects, recent estimates, invoices
 
 ---
 
-## 🧱 Tech Stack
-- Frontend: React + Tailwind CSS
-- Backend: (Planned)
-- Database: MySQL (Planned)
-- Integration: HubSpot API (Simulated)
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React + Vite |
+| Styling | Inline JSX styles with dark mode support |
+| Backend | Node.js + Express |
+| Database | MySQL (in progress) |
+| Version Control | Git + GitHub |
 
 ---
 
-## 🎯 Project Goal
-To design a full-stack contractor management system that demonstrates:
-- Entity Relationship Modeling (ERD)
-- Relational database design
-- Workflow automation concepts
-- Real-world business process mapping
+## Project Structure
+
+```
+kilohollow-os/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── LeadsBoard.jsx
+│   │   │   ├── EstimateEditor.jsx
+│   │   │   ├── ProjectsPage.jsx
+│   │   │   ├── InvoicesPage.jsx
+│   │   │   └── PaymentsPage.jsx
+│   │   └── App.jsx
+│   └── package.json
+├── backend/
+│   └── server.js
+└── README.md
+```
 
 ---
 
-## 📌 Status
-🚧 Currently building UI prototype (frontend first)
+## Getting Started
+
+### Prerequisites
+- Node.js v18+
+- npm
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/blijminnetje/kilohollow-os.git
+cd kilohollow-os
+
+# Install frontend dependencies
+cd frontend
+npm install
+npm run dev
+```
+
+Then open **http://localhost:5173** in your browser.
 
 ---
 
-## 📷 Screens (Coming Soon)
+## Database Integration (In Progress)
+
+The frontend currently uses hardcoded seed data. MySQL integration is planned with the following tables:
+
+```sql
+leads
+estimates
+estimate_items
+projects
+invoices
+invoice_items
+payments
+vendors
+price_book
+```
+
+Each React state array maps directly to a MySQL table. The backend will expose REST API endpoints that replace the hardcoded `useState` initial values.
+
+---
+
+## Team
+
+- Minh Nguyen — VCU CMSC608
+
+---
+
+## Status
+
+✅ Frontend complete  
+🔄 MySQL backend in progress  
+⬜ Deployment (Vercel + PlanetScale)

@@ -6,33 +6,32 @@ import InvoicesPage from './components/InvoicesPage';
 import PaymentsPage from './components/PaymentsPage';
 
 const initialLeads = [
-  { id: 1, name: "Tom - carport", amount: 10000, closeDate: "05/02/2026", dealType: "Roof Solar", stage: "New Lead", contact: "Tom Johnson" },
-  { id: 2, name: "Alex Boguslavsky", amount: 22649, closeDate: "05/02/2026", dealType: "Roof Solar", stage: "Proposal Sent", contact: "Alex B." },
-  { id: 3, name: "Alex Boguslavsky", amount: 3000, closeDate: "05/02/2026", dealType: "Service", stage: "Proposal Sent", contact: "Alex B." },
-  { id: 4, name: "Rees", amount: 6200, closeDate: "05/02/2026", dealType: "Service", stage: "Proposal Sent", contact: "Rees" },
-  { id: 5, name: "Matthew Walden", amount: 70000, closeDate: "05/02/2026", dealType: "Roof Solar + Storage", stage: "Site Survey", contact: "Matthew W." },
-  { id: 6, name: "Travers Clemons", amount: 69482, closeDate: "04/10/2026", dealType: "Roof Solar + Storage", stage: "Site Survey", contact: "Travers C." },
-  { id: 7, name: "Gordon Callahan", amount: 50710, closeDate: "03/28/2026", dealType: "SPAN + Storage", stage: "Closed Won", contact: "Gordon C." },
-  { id: 8, name: "Mark Roluf", amount: 36750, closeDate: "03/11/2026", dealType: "Storage", stage: "Closed Won", contact: "Mark R." },
+  { id: 1, name: "Tom Johnson", amount: 10000, closeDate: "05/02/2026", dealType: "Roof Solar", stage: "New Lead", contact: "Tom Johnson" },
+  { id: 2, name: "Alex Owen", amount: 22649, closeDate: "05/02/2026", dealType: "Roof Solar", stage: "Proposal Sent", contact: "Alex B." },
+  { id: 3, name: "Alex Owen", amount: 3000, closeDate: "05/02/2026", dealType: "Service", stage: "Proposal Sent", contact: "Alex B." },
+  { id: 4, name: "Roy Robinson", amount: 6200, closeDate: "05/02/2026", dealType: "Service", stage: "Proposal Sent", contact: "Roy Robinson" },
+  { id: 5, name: "Matthew Whites", amount: 70000, closeDate: "05/02/2026", dealType: "Roof Solar + Storage", stage: "Site Survey", contact: "Matthew W." },
+  { id: 6, name: "John Brown", amount: 69482, closeDate: "04/10/2026", dealType: "Roof Solar + Storage", stage: "Site Survey", contact: "John B." },
+  { id: 7, name: "Gordon Millers", amount: 50710, closeDate: "03/28/2026", dealType: "SPAN + Storage", stage: "Closed Won", contact: "Gordon M." },
+  { id: 8, name: "Mark Davis", amount: 36750, closeDate: "03/11/2026", dealType: "Storage", stage: "Closed Won", contact: "Mark D." },
   { id: 9, name: "Sarah Jennings", amount: 15500, closeDate: "05/15/2026", dealType: "Roof Solar", stage: "New Lead", contact: "Sarah J." },
 ];
 
 const initialEstimates = [
-  { id: 357, title: "Extra", customer: "Ibrahim Alousi", leadId: null, total: 0, estimateStatus: "Estimating", items: [] },
-  { id: 356, title: "Solar Removal - Boguslavsky", customer: "Alexander Boguslavsky", leadId: 2, total: 2750, estimateStatus: "Estimating", items: [] },
-  { id: 355, title: "Tonia Schnarr - Lift and Replace", customer: "Tonia Schnarr", leadId: null, total: 7668, estimateStatus: "Approved", items: [] },
+  { id: 357, title: "Battery", customer: "Eddy Garcia", leadId: null, total: 0, estimateStatus: "Estimating", items: [] },
+  { id: 356, title: "Solar Removal - Owen", customer: "Alex Owen", leadId: 2, total: 2750, estimateStatus: "Estimating", items: [] },
+  { id: 355, title: "Carol Williams - Lift and Replace", customer: "Carol Williams", leadId: null, total: 7668, estimateStatus: "Approved", items: [] },
 ];
 
 const initialProjects = [
-  { id: 101, name: "Gordon Callahan", projectNumber: "PRJ-001", stage: "Engineering", sellPrice: 50710, estCost: 36325, paid: 0, dealType: "SPAN + Storage", closeDate: "03/28/2026", leadId: 7, estimateId: 336, pm: "Minh Nguyen" },
-  { id: 102, name: "Mark Roluf", projectNumber: "PRJ-002", stage: "Bidding", sellPrice: 36750, estCost: 24300, paid: 3675, dealType: "Storage", closeDate: "03/11/2026", leadId: 8, estimateId: null, pm: "Minh Nguyen" },
+  { id: 101, name: "Gordon Millers", projectNumber: "PRJ-001", stage: "Engineering", sellPrice: 50710, estCost: 36325, paid: 0, dealType: "SPAN + Storage", closeDate: "03/28/2026", leadId: 7, estimateId: 336, pm: "Min Nguyen" },
+  { id: 102, name: "Mark Davis", projectNumber: "PRJ-002", stage: "Bidding", sellPrice: 36750, estCost: 24300, paid: 3675, dealType: "Storage", closeDate: "03/11/2026", leadId: 8, estimateId: null, pm: "Min Nguyen" },
 ];
 
-// Invoices state lives here so both InvoicesPage and PaymentsPage share it
 const initialInvoices = [
   {
-    id: 1, invoiceNumber: "345-1", projectName: "Bonnie Owens", projectId: 101,
-    customer: "Bonnie Owens", invoiceDate: "03/30/2026", dueDate: "03/30/2026",
+    id: 1, invoiceNumber: "345-1", projectName: "David Rodriguez", projectId: 101,
+    customer: "David Rodriguez", invoiceDate: "03/30/2026", dueDate: "03/30/2026",
     total: 485, paid: 485, status: "Paid",
     description: "Scope of Work: Tesla Inverter Commissioning & System Review\nKilo Hollow Energy will perform a site visit to evaluate, commission, and attempt activation of the existing Tesla solar inverter system.",
     terms: "Full-payment is due within 30 days of receiving this invoice unless other terms have been agreed upon.",
@@ -53,14 +52,14 @@ const initialInvoices = [
   },
   {
     id: 3, invoiceNumber: "313-1", projectName: "-", projectId: null,
-    customer: "Ballard Marine Construction", invoiceDate: "03/29/2026", dueDate: "03/30/2026",
+    customer: "Blue Water Marine Construction", invoiceDate: "03/29/2026", dueDate: "03/30/2026",
     total: 7692.50, paid: 0, status: "Draft",
     description: "", terms: "Full-payment is due within 30 days of receiving this invoice unless other terms have been agreed upon.",
     items: [], payments: [],
   },
   {
-    id: 4, invoiceNumber: "330-1", projectName: "Rolufs - Powerwall 3", projectId: 102,
-    customer: "Mark Rolufs", invoiceDate: "03/16/2026", dueDate: "03/16/2026",
+    id: 4, invoiceNumber: "330-1", projectName: "Mark Davis - Powerwall 3", projectId: 102,
+    customer: "Mark Davis", invoiceDate: "03/16/2026", dueDate: "03/16/2026",
     total: 36750.50, paid: 3675, status: "Submitted",
     description: "Powerwall 3 installation - deposit invoice.",
     terms: "Full-payment is due within 30 days of receiving this invoice unless other terms have been agreed upon.",
@@ -78,9 +77,10 @@ export default function App() {
   const [leads, setLeads] = useState(initialLeads);
   const [estimates, setEstimates] = useState(initialEstimates);
   const [projects, setProjects] = useState(initialProjects);
-  const [invoices, setInvoices] = useState(initialInvoices); // ← lifted up, shared
+  const [invoices, setInvoices] = useState(initialInvoices);
   const [showAddEstimate, setShowAddEstimate] = useState(false);
   const [addForm, setAddForm] = useState({ title: "", leadId: "", customCustomer: "" });
+  const [dashboardPopup, setDashboardPopup] = useState(null); // ← fixed: inside component
 
   const theme = {
     bg: darkMode ? "#0f172a" : "#f5f7fb",
@@ -96,7 +96,6 @@ export default function App() {
     warning: "#f59e0b",
   };
 
-  // When a lead moves to Closed Won, auto-create a project
   const setLeadsWithProjectSync = (updater) => {
     setLeads(prev => {
       const next = typeof updater === "function" ? updater(prev) : updater;
@@ -117,7 +116,7 @@ export default function App() {
                 closeDate: lead.closeDate,
                 leadId: lead.id,
                 estimateId: null,
-                pm: "Minh Nguyen",
+                pm: "Min Nguyen",
               };
               return [...ps, newProject];
             }
@@ -174,7 +173,6 @@ export default function App() {
     setActiveTab("Estimates");
   };
 
-  // Dashboard: total invoiced and total collected from shared invoices state
   const totalInvoiced = invoices.reduce((s, i) => s + i.total, 0);
   const totalCollected = invoices.reduce((s, i) => s + i.paid, 0);
 
@@ -267,7 +265,11 @@ export default function App() {
                         {stage} ({leads.filter(l => l.stage === stage).length})
                       </div>
                       {leads.filter(l => l.stage === stage).slice(0, 3).map(lead => (
-                        <div key={lead.id} style={{ background: theme.panel, padding: "12px", borderRadius: "8px", marginBottom: "8px", border: `1px solid ${theme.border}` }}>
+                        <div key={lead.id}
+                          onClick={() => setDashboardPopup(lead)}
+                          onMouseEnter={e => e.currentTarget.style.border = `1px solid ${theme.accent}`}
+                          onMouseLeave={e => e.currentTarget.style.border = `1px solid ${theme.border}`}
+                          style={{ background: theme.panel, padding: "12px", borderRadius: "8px", marginBottom: "8px", border: `1px solid ${theme.border}`, cursor: "pointer", transition: "border 0.15s" }}>
                           <div style={{ fontWeight: 700, fontSize: "14px" }}>{lead.name}</div>
                           <div style={{ color: theme.subtext, fontSize: "13px", marginTop: "4px" }}>${Number(lead.amount).toLocaleString()}</div>
                         </div>
@@ -412,12 +414,12 @@ export default function App() {
             <ProjectsPage theme={theme} projects={projects} setProjects={setProjects} leads={leads} />
           )}
 
-          {/* ── INVOICES ── passes shared invoices state ── */}
+          {/* ── INVOICES ── */}
           {activeTab === "Invoices" && (
             <InvoicesPage theme={theme} projects={projects} estimates={estimates} invoices={invoices} setInvoices={setInvoices} />
           )}
 
-          {/* ── PAYMENTS ── passes same shared invoices state ── */}
+          {/* ── PAYMENTS ── */}
           {activeTab === "Payments" && (
             <PaymentsPage theme={theme} invoices={invoices} setInvoices={setInvoices} />
           )}
@@ -450,6 +452,48 @@ export default function App() {
           </div>
         </div>
       )}
+
+      {/* Dashboard Lead Popup */}
+      {dashboardPopup && (
+        <div onClick={() => setDashboardPopup(null)}
+          style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}>
+          <div onClick={e => e.stopPropagation()}
+            style={{ background: theme.panel, borderRadius: "16px", padding: "24px", width: "320px", border: `1px solid ${theme.border}` }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <div style={{ width: "42px", height: "42px", borderRadius: "50%", background: theme.accentSoft, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "14px", color: theme.accent, flexShrink: 0 }}>
+                  {(dashboardPopup.contact || dashboardPopup.name).slice(0, 2).toUpperCase()}
+                </div>
+                <div>
+                  <div style={{ fontWeight: 800, fontSize: "15px", color: theme.text }}>{dashboardPopup.contact || dashboardPopup.name}</div>
+                  <div style={{ fontSize: "12px", color: theme.subtext, marginTop: "2px" }}>{dashboardPopup.name}</div>
+                </div>
+              </div>
+              <button onClick={() => setDashboardPopup(null)}
+                style={{ background: "none", border: "none", cursor: "pointer", fontSize: "20px", color: theme.subtext, lineHeight: 1 }}>×</button>
+            </div>
+            <div style={{ display: "grid", gap: "2px", marginBottom: "16px" }}>
+              {[
+                { label: "Amount", value: `$${Number(dashboardPopup.amount).toLocaleString()}`, color: theme.accent },
+                { label: "Stage", value: dashboardPopup.stage },
+                { label: "Deal Type", value: dashboardPopup.dealType },
+                { label: "Close Date", value: dashboardPopup.closeDate || "—" },
+                { label: "Assigned To", value: "Min Nguyen" },
+              ].map(row => (
+                <div key={row.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: `1px solid ${theme.border}` }}>
+                  <span style={{ fontSize: "13px", color: theme.subtext }}>{row.label}</span>
+                  <span style={{ fontSize: "13px", fontWeight: 600, color: row.color || theme.text }}>{row.value}</span>
+                </div>
+              ))}
+            </div>
+            <button onClick={() => { setDashboardPopup(null); setActiveTab("Leads"); }}
+              style={{ width: "100%", background: theme.accent, color: "#fff", border: "none", borderRadius: "8px", padding: "10px", cursor: "pointer", fontWeight: 700, fontSize: "13px" }}>
+              View in Leads →
+            </button>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

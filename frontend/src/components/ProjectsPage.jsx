@@ -159,7 +159,7 @@ export default function ProjectsPage({ theme, projects, setProjects, leads }) {
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
                   {[
                     { label: "Gross Profit", value: fmt(grossProfit), sub: `${grossProfitPct}%`, color: theme.success },
-                    { label: "Project Manager", value: p.pm || "Minh Nguyen", sub: "PM", color: theme.accent },
+                    { label: "Project Manager", value: p.pm || "Min Nguyen", sub: "PM", color: theme.accent },
                     { label: "Schedule Completed", value: p.stage === "Completed" ? "100%" : stageIdx > 0 ? `${Math.round((stageIdx / (PROJECT_STAGES.length - 1)) * 100)}%` : "0%", sub: p.stage, color: theme.warning },
                   ].map(card => (
                     <div key={card.label} style={{ background: theme.panelSoft, borderRadius: "12px", padding: "18px" }}>
@@ -251,9 +251,9 @@ export default function ProjectsPage({ theme, projects, setProjects, leads }) {
                 <div style={{ background: theme.panelSoft, borderRadius: "12px", padding: "20px" }}>
                   <div style={{ fontWeight: 700, fontSize: "15px", marginBottom: "16px" }}>Assignees</div>
                   {[
-                    { label: "Project Manager", value: p.pm || "Minh Nguyen" },
+                    { label: "Project Manager", value: p.pm || "Min Nguyen" },
                     { label: "Site Manager", value: p.siteManager || "—" },
-                    { label: "Estimator", value: "Minh Nguyen" },
+                    { label: "Estimator", value: "Min Nguyen" },
                   ].map(row => (
                     <div key={row.label} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: `1px solid ${theme.border}` }}>
                       <span style={{ fontSize: "13px", color: theme.subtext }}>{row.label}</span>
@@ -443,7 +443,7 @@ export default function ProjectsPage({ theme, projects, setProjects, leads }) {
 
         {/* Footer */}
         <div style={{ marginTop: "12px", fontSize: "12px", color: theme.subtext, padding: "8px 0" }}>
-          Created: {new Date().toLocaleDateString()} · by Minh Nguyen · Project {p.projectNumber}
+          Created: {new Date().toLocaleDateString()} · by Min Nguyen · Project {p.projectNumber}
         </div>
       </div>
     );

@@ -407,7 +407,7 @@ export default function InvoicesPage({ theme, projects, estimates, invoices, set
 
         {/* Footer */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "16px" }}>
-          <div style={{ fontSize: "12px", color: theme.subtext }}>Created: {inv.invoiceDate} · by Minh Nguyen</div>
+          <div style={{ fontSize: "12px", color: theme.subtext }}>Created: {inv.invoiceDate} · by Min Nguyen</div>
           <div style={{ display: "flex", gap: "10px" }}>
             {balance > 0 && (
               <button onClick={() => { setPaymentForm(f => ({ ...f, amount: balance.toFixed(2) })); setShowPostPayment(true); setActiveTab("Payments"); }}

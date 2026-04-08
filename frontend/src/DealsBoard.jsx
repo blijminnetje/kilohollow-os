@@ -30,10 +30,10 @@ const stageWeights = {
 };
 
 const initialDeals = [
-  { id: "1", name: "Tom - carport", amount: 10000, stage: "New Lead" },
-  { id: "2", name: "Alex B", amount: 22000, stage: "Proposal Sent" },
-  { id: "3", name: "Matthew W", amount: 70000, stage: "Site Survey" },
-  { id: "4", name: "Gordon C", amount: 50000, stage: "Closed Won" },
+  { id: "1", name: "Tom Johnson", amount: 10000, stage: "New Lead" },
+  { id: "2", name: "Alex Owen", amount: 22000, stage: "Proposal Sent" },
+  { id: "3", name: "Matthew Whites", amount: 70000, stage: "Site Survey" },
+  { id: "4", name: "Gordon Millers", amount: 50000, stage: "Closed Won" },
 ];
 
 function formatMoney(value) {

@@ -249,7 +249,7 @@ export default function PaymentsPage({ theme, invoices: externalInvoices = [], s
 
         {/* Footer */}
         <div style={{ fontSize: "12px", color: theme.subtext, marginTop: "12px" }}>
-          Created: {p.date} · by Minh Nguyen
+          Created: {p.date} · by Min Nguyen
         </div>
       </div>
     );
