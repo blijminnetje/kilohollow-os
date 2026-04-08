@@ -1,0 +1,19 @@
+{
+  "name": "kilohollow-os-main",
+  "version": "1.0.0",
+  "description": "Frontend UI prototype for a Contractor Foreman-style workflow system integrated with HubSpot. # Kilo Hollow OS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.14.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1"
+  }
+}
